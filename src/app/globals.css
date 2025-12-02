@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  /* Primary Forest Green */
+  --color-primary-50: #f0f9f4;
+  --color-primary-100: #dcf2e3;
+  --color-primary-200: #bce4c9;
+  --color-primary-300: #89d0a4;
+  --color-primary-400: #4fb377;
+  --color-primary-500: #2d8f5a;
+  --color-primary-600: #1f7245;
+  --color-primary-700: #1a5c39;
+  --color-primary-800: #164930;
+  --color-primary-900: #123d28;
+  
+  /* Forest Tones */
+  --color-forest-50: #f4f7f4;
+  --color-forest-100: #e6f0e6;
+  --color-forest-200: #c9dcc9;
+  --color-forest-300: #9cc09c;
+  --color-forest-400: #6b9b6b;
+  --color-forest-500: #4a7c59;
+  --color-forest-600: #3a6249;
+  --color-forest-700: #2f4f3c;
+  --color-forest-800: #264031;
+  --color-forest-900: #1f3529;
+  
+  /* Beige Tones */
+  --color-beige-50: #fdfcfa;
+  --color-beige-100: #faf7f0;
+  --color-beige-200: #f4eddc;
+  --color-beige-300: #eddfc3;
+  --color-beige-400: #e4cca0;
+  --color-beige-500: #dab574;
+  --color-beige-600: #ca9b56;
+  --color-beige-700: #b47d47;
+  --color-beige-800: #93653f;
+  --color-beige-900: #785438;
+  
+  /* Earth Tones */
+  --color-earth-50: #f9f7f4;
+  --color-earth-100: #f1ece3;
+  --color-earth-200: #e3d5c1;
+  --color-earth-300: #d2b89a;
+  --color-earth-400: #c09671;
+  --color-earth-500: #b17c57;
+  --color-earth-600: #9d6a4b;
+  --color-earth-700: #83553f;
+  --color-earth-800: #6b4637;
+  --color-earth-900: #573a2e;
+  
+  /* Custom Fonts */
+  --font-display: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  
+  /* Custom Shadows */
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --shadow-soft: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  --shadow-premium: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Animations */
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-slide-up: slideUp 0.6s ease-out;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+/* Glass Morphism Base */
+.glass {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Premium Gradient Backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary-400) 0%, var(--color-primary-600) 100%);
+}
+
+.gradient-earth {
+  background: linear-gradient(135deg, var(--color-earth-300) 0%, var(--color-earth-500) 100%);
+}
+
+.gradient-forest {
+  background: linear-gradient(135deg, var(--color-forest-400) 0%, var(--color-forest-600) 100%);
+}
