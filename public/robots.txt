@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://terranest.vercel.app
+
+# Sitemaps
+Sitemap: https://terranest.vercel.app/sitemap.xml

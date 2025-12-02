@@ -12,11 +12,6 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['framer-motion'],
   },
 
-  // Turbopack configuration for Next.js 16
-  turbopack: {
-    // Empty config to enable Turbopack with default settings
-  },
-
   // Image optimizations
   images: {
     remotePatterns: [

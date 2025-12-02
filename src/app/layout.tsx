@@ -1,3 +1,4 @@
+import Analytics from "@/components/analytics/Analytics";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import type { Metadata, Viewport } from "next";
@@ -13,17 +14,31 @@ export const metadata: Metadata = {
   keywords: "terrarium, premium, plants, nature, home decor, workshops, corporate gifts, miniature ecosystem, glass gardens",
   authors: [{ name: "Terranest" }],
   creator: "Terranest",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://terranest.vercel.app'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Terranest - Premium Terrarium Collections",
     description: "Creating premium terrarium experiences that bring nature's tranquility into modern spaces.",
     type: "website",
     locale: "en_US",
     siteName: "Terranest",
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://terranest.vercel.app',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Terranest - Premium Terrarium Collections',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Terranest - Premium Terrarium Collections",
     description: "Creating premium terrarium experiences that bring nature's tranquility into modern spaces.",
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -35,6 +50,11 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  verification: {
+    // Add your verification IDs when ready
+    // google: 'your-google-verification-id',
+    // yandex: 'your-yandex-verification-id',
   },
 };
 
@@ -69,6 +89,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );
